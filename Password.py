@@ -5,29 +5,30 @@ l, u, p, d = 0, 0, 0, 0
 print("Enter your password")
 x =input()
 
-specialchar="$@_!#%*&"
+specialchar="$@_!#%*&."
 smallalphabets="abcdefghijklmnopqrstuvwxyz"
 capitalalphabets="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 digits="0123456789"
 if (len(x) >= 8):
 	for i in x:
 
-		# counting lowercase alphabets
+		#lowercase alphabets counts
 		if (i in smallalphabets):
 			l+=1		
 
-		# counting uppercase alphabets
+		#uppercase alphabets counts
 		if (i in capitalalphabets):
 			u+=1		
 
-		# counting digits
+		#digits counts
+		
 		if (i in digits):
 			d+=1		
 
-		# counting the mentioned special characters
+		#special characters 
 		if(i in specialchar):
 			p+=1	
-if (l>=1 and u>=1 and p>=1 and d>=1 and l+p+u+d==len(s)):
-	print("Valid Password")
+if (l>=1 and u>=1 and p>=1 and d>=1 and l+p+u+d==len(x)):
+	print("Strong Password")
 else:
-	print("Invalid Password")
+	print("Weak Password")
